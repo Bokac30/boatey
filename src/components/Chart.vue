@@ -31,10 +31,10 @@ export default {
     var model = $(go.TreeModel);
     model.nodeDataArray =
     [
-      { key: "1",              name: "Node 1",   source: "cat1.png" },
-      { key: "2", parent: "1", name: "Node 2",    source: "cat2.png" },
-      { key: "3", parent: "1", name: "Node 3",   source: "cat3.png" }
-    ];
+      { key: '1',              name: 'Node 1',   source: 'cat1.png' },
+      { key: '2', parent: '1', name: 'Node 2',   source: 'cat2.png' },
+      { key: '3', parent: '1', name: 'Node 3',   source: 'cat3.png' }
+    ]
     myDiagram.model = model
   }
 }
