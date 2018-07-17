@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company name</a>
+      <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Company Inc.</a>
       <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
@@ -18,13 +18,13 @@
               <li class="nav-item">
                 <a class="nav-link active" href="#">
                   <span data-feather="home"></span>
-                  Dashboard <span class="sr-only">(current)</span>
+                  Start here <span class="sr-only">(current)</span>
                 </a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
-                  <span data-feather="file"></span>
-                  Orders
+                  <font-awesome-icon icon="box" />
+                  <router-link to="/Dashboard">Dashboard</router-link>
                 </a>
               </li>
               <li class="nav-item">
@@ -41,7 +41,7 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">
-                  <span data-feather="bar-chart-2"></span>
+                  <font-awesome-icon icon="" />
                   Reports
                 </a>
               </li>
@@ -106,7 +106,7 @@
           <!-- <canvas class="my-4" id="myChart" width="900" height="380"></canvas> -->
           <router-view/>
 
-          
+
         </main>
       </div>
     </div>
