@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <img src="/static/map.jpg" alt="Distribution Info">
+      <img src="/static/images/map.jpg" alt="Distribution Info">
     </div>
     <div>
       <h3>Distribution Info</h3>

@@ -14,7 +14,7 @@ export default {
     var myDiagram = $(go.Diagram, "myDiagramDiv",
       { "undoManager.isEnabled": true, // enable Ctrl-Z to undo and Ctrl-Y to redo
       layout: $(go.TreeLayout, // specify a Diagram.layout that arranges trees
-                { angle: 90, layerSpacing: 35 })
+                { angle: 0, layerSpacing: 35 })
     });
 
     // the template we defined earlier
