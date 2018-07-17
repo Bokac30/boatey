@@ -4,13 +4,16 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import './css/simple-sidebar.css'
 import go from 'gojs'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCoffee, faBox } from '@fortawesome/free-solid-svg-icons'
+import { faCoffee, faBox, faHome, faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 library.add(faCoffee)
-library.add(faBox)
+library.add(faHome)
+library.add([faBox])
+library.add(faBars)
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

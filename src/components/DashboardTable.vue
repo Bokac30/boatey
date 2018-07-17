@@ -1,7 +1,9 @@
 <template>
     <div>
-        <h2>Section title</h2>
-          <div class="table-responsive">
+        <h2>
+          <span data-toggle="colapse" data-target="#data-table-responsive">[ - ]</span>
+          Track and Trace Details</h2>
+          <div id="data-table-responsive" class="table-responsive colapse">
             <table class="table table-striped table-sm">
               <thead>
                 <tr>
