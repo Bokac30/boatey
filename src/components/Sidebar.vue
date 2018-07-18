@@ -3,32 +3,49 @@
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#">
-                        Start Bootstrap
+                        John Doe
                     </a>
                 </li>
                 <li><router-link to="/dashboard">
                   <font-awesome-icon icon="box" />
-                  Dashboard</router-link>
+                  <span class="menu-item">Dashboard</span>
+                  </router-link>
                 </li>
                 <li>
                   <a href="#">
-                  <font-awesome-icon icon="coffe" />
-                    Shortcuts</a>
+                  <font-awesome-icon icon="coffee" />
+                    <span class="menu-item">Shortcuts</span>
+                    </a>
                 </li>
                 <li>
-                    <a href="#">Overview</a>
+                    <router-link to="/users">
+                      <font-awesome-icon icon="user" />
+                      <span class="menu-item">Users</span>
+                    </router-link>
                 </li>
                 <li>
-                    <a href="#">Events</a>
+                    <a href="#">
+                      <font-awesome-icon icon="box" />
+                      <span class="menu-item">Events</span>
+                      </a>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a href="#">
+                      <font-awesome-icon icon="truck" />
+                      <span class="menu-item">Services</span>
+                      </a>
                 </li>
                 <li>
-                    <a href="#">Services</a>
+                    <a href="#">
+                      <font-awesome-icon icon="phone" />
+                      <span class="menu-item">Contact</span>
+                      </a>
                 </li>
-                <li>
-                    <a href="#">Contact</a>
+                                <li>
+                    <a href="#">
+                      <font-awesome-icon icon="building" />
+                      <span class="menu-item">About</span>
+                      </a>
                 </li>
             </ul>
         </div>
@@ -42,5 +59,11 @@ export default {
 }
 </script>
 <style scoped>
+  .menu-item {
+    display: none;
+  }
 
+  #wrapper.toggled .menu-item {
+    display: inline-block;
+  }
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <img src="/static/images/map.jpg" alt="Distribution Info">
+      <img src="/static/images/map.jpg" alt="Distribution Info" class="w-100">
     </div>
     <div>
       <h3>Distribution Info</h3>

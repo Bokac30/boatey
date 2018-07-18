@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="m-2">
         <h2>
           <span data-toggle="colapse" data-target="#data-table-responsive">[ - ]</span>
           Track and Trace Details</h2>
@@ -112,20 +112,6 @@
                   <td>per</td>
                   <td>conubia</td>
                   <td>nostra</td>
-                </tr>
-                <tr>
-                  <td>1,014</td>
-                  <td>per</td>
-                  <td>inceptos</td>
-                  <td>himenaeos</td>
-                  <td>Curabitur</td>
-                </tr>
-                <tr>
-                  <td>1,015</td>
-                  <td>sodales</td>
-                  <td>ligula</td>
-                  <td>in</td>
-                  <td>libero</td>
                 </tr>
               </tbody>
             </table>

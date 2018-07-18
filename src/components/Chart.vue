@@ -10,12 +10,12 @@ export default {
     return {}
   },
   mounted () {
-    var $ = go.GraphObject.make;
+    var $ = go.GraphObject.make
     var myDiagram = $(go.Diagram, "myDiagramDiv",
       { "undoManager.isEnabled": true, // enable Ctrl-Z to undo and Ctrl-Y to redo
-      layout: $(go.TreeLayout, // specify a Diagram.layout that arranges trees
-                { angle: 0, layerSpacing: 35 })
-    });
+        layout: $(go.TreeLayout, // specify a Diagram.layout that arranges trees
+          { angle: 0, layerSpacing: 35 })
+      })
 
     // the template we defined earlier
     myDiagram.nodeTemplate = $(go.Node, "Horizontal",
@@ -28,12 +28,12 @@ export default {
         new go.Binding("text", "name"))
     )
 
-    var model = $(go.TreeModel);
+    var model = $(go.TreeModel)
     model.nodeDataArray =
     [
-      { key: '1',              name: 'Supplier',   source: '/static/sprites/supplier.jpg' },
-      { key: '2', parent: '1', name: 'Manufactoring',   source: '/static/sprites/factory.jpg' },
-      { key: '3', parent: '2', name: 'Pallets',   source: '/static/sprites/pallets.jpg' }
+      { key: '1', name: 'Supplier', source: '/static/sprites/supplier.jpg' },
+      { key: '2', parent: '1', name: 'Manufactoring', source: '/static/sprites/factory.jpg' },
+      { key: '3', parent: '2', name: 'Pallets', source: '/static/sprites/pallets.jpg' }
     ]
     myDiagram.model = model
   }

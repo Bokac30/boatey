@@ -7,13 +7,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './css/simple-sidebar.css'
 import go from 'gojs'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCoffee, faBox, faHome, faBars } from '@fortawesome/free-solid-svg-icons'
+import { faCoffee, faBox, faHome, faBars, faSearch, faUser, faTruck, faPhone, faBuilding } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faCoffee)
-library.add(faHome)
-library.add([faBox])
-library.add(faBars)
+library.add([faBox, faSearch, faBars, faHome, faCoffee, faUser, faTruck, faPhone, faBuilding])
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 

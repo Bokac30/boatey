@@ -1,8 +1,7 @@
 <template>
   <div id="app">
-
     <!-- Navbar -->
-    <top-header />
+    <top-header v-on:toggle-event="changeActive" :toggled.sync="isActive" />
 
     <div id="wrapper" :class="{toggled: isActive}">
 
@@ -12,9 +11,7 @@
 
         <!-- Page Content -->
         <div id="page-content-wrapper">
-          <span v-on:click="toggleMenu" class="hand">
-            <font-awesome-icon icon="bars" />
-          </span>
+
             <div class="container-fluid">
                 <router-view/>
             </div>
@@ -44,7 +41,7 @@ export default {
   mounted () {
   },
   methods: {
-    toggleMenu () {
+    changeActive () {
       this.isActive = !this.isActive
     }
   }
@@ -65,6 +62,11 @@ body {
   font-size: .875rem;
 }
 
+.container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .feather {
   width: 16px;
   height: 16px;
@@ -79,20 +81,20 @@ body {
   padding-top: .75rem;
   padding-bottom: .75rem;
   font-size: 1rem;
-  background-color: rgba(0, 0, 0, .25);
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+  /* background-color: rgba(0, 0, 0, .25); */
+  /* box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25); */
 }
 
 .navbar .form-control {
   padding: .75rem 1rem;
-  border-width: 0;
-  border-radius: 0;
+  border-width: 1px;
+  border-radius: 5px 5px 5px;
 }
 
-.form-control-dark {
-  color: #fff;
-  background-color: rgba(255, 255, 255, .1);
-  border-color: rgba(255, 255, 255, .1);
+.form-control-light {
+  color: #333;
+  background-color: rgba(255, 255, 255, .5);
+  border-color: rgba(255, 255, 255, .5);
 }
 
 .form-control-dark:focus {
