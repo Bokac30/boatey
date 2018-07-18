@@ -48,6 +48,23 @@
                       </a>
                 </li>
             </ul>
+            <div class="sidebar-bottom">
+              <div class="sidebar-bootom-item" title="Settings">
+                <img src="/static/images/sidebar/iconSettings.jpg" alt="Settings" />
+              </div>
+              <div class="sidebar-bootom-item" title="Suppliers">
+                <img src="/static/images/sidebar/iconSuppliers.jpg" alt="Suppliers" />
+              </div>
+              <div class="sidebar-bootom-item" title="Distributors">
+                <img src="/static/images/sidebar/iconDistributors.jpg" alt="Distributors" />
+              </div>
+              <div class="sidebar-bootom-item" title="Logistic Partners">
+                <img src="/static/images/sidebar/iconLogisticPartners.jpg" alt="Logistic Partners" />
+              </div>
+              <div class="sidebar-bootom-item" title="Retailers">
+                <img src="/static/images/sidebar/iconRetailers.jpg" alt="Retailers" />
+              </div>
+            </div>
         </div>
 </template>
 <script>
@@ -65,5 +82,15 @@ export default {
 
   #wrapper.toggled .menu-item {
     display: inline-block;
+  }
+
+  .sidebar-bottom {
+    position: absolute;
+    top: 350px;
+  }
+
+  .sidebar-bootom-item {
+    margin: 20px;
+    cursor: pointer;
   }
 </style>
