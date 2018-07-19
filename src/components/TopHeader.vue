@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-lg navbar-light">
       <a class="navbar-brand" href="#">
         <img src="/static/images/trace-master-logo.jpg" class="pl-3 pr-3" />
-        <button @click="toggleMenu" class="burger-icon pl-3 pr-3">
+        <button @click="toggleSidebar" class="burger-icon pl-3 pr-3">
           <font-awesome-icon icon="bars" />
         </button>
       </a>
@@ -30,12 +30,12 @@
               <img src="/static/images/navbar/topBarIconNotifications.jpg" />
               </a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <li class="nav-item">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="collapse" data-target="nav-settings" aria-haspopup="true" aria-expanded="false">
               Settings
               <img src="/static/images/navbar/topBarIconSettings.jpg" />
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div class="dropdown-menu collapse" aria-labelledby="navbarDropdown" id="nav-settings">
               <a class="dropdown-item" href="#">Action</a>
               <a class="dropdown-item" href="#">Another action</a>
               <div class="dropdown-divider"></div>
@@ -56,19 +56,15 @@
 </template>
 
 <script>
+import SidebarToggle from './mixins/sidebar-toggle'
 
 export default {
   name: 'TopHeader',
-  props: ['toggled'],
+  mixins: [SidebarToggle],
   data () {
     return {}
   },
-  methods: {
-    toggleMenu () {
-      this.toggled = !this.toggled
-      this.$emit('toggle-event')
-    }
-  }
+  methods: {}
 }
 </script>
 

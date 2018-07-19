@@ -7,22 +7,37 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import './css/simple-sidebar.css'
 import go from 'gojs'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCoffee, faBox, faHome, faBars, faSearch, faUser, faTruck, faPhone, faBuilding } from '@fortawesome/free-solid-svg-icons'
+import { faCoffee, faBox, faHome, faBars, faSearch, faUser, faTruck, faPhone, faBuilding, faTachometerAlt, faIndustry, faComment } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
 import '@/css/style.css'
 
-library.add([faBox, faSearch, faBars, faHome, faCoffee, faUser, faTruck, faPhone, faBuilding])
+import store from './store'
+import _ from 'lodash'
+
+// import JQuery from 'jquery'
+
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+Vue.use(BootstrapVue)
+
+// let $ = JQuery
+
+library.add([faBox, faSearch, faBars, faHome, faCoffee, faUser, faTruck, faPhone, faBuilding, faTachometerAlt, faIndustry, faComment])
 
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 Vue.config.productionTip = false
 Vue.use(go)
+Vue.use(_)
+// Vue.use($)
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
-  components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  store,
+  components: { App }
+
 })

@@ -7,13 +7,13 @@
                     </a>
                 </li>
                 <li><router-link to="/dashboard">
-                  <font-awesome-icon icon="box" />
+                  <font-awesome-icon icon="tachometer-alt" />
                   <span class="menu-item">Dashboard</span>
                   </router-link>
                 </li>
                 <li>
                   <a href="#">
-                  <font-awesome-icon icon="coffee" />
+                  <font-awesome-icon icon="industry" />
                     <span class="menu-item">Shortcuts</span>
                     </a>
                 </li>

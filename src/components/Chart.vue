@@ -49,7 +49,7 @@ export default {
       { key: '4', parent: '3', name: 'Warehouse', source: '/static/sprites/warehouse.jpg' },
       { key: '5', parent: '4', name: 'Distribution', source: '/static/sprites/distribution.jpg' },
       { key: '6', parent: '5', name: 'External Warehouse', source: '/static/sprites/ext-warehouse.jpg' },
-      { key: '7', parent: '2', name: "Cardbord Box", source: '/static/sprites/cardbox.jpg' }
+      { key: '7', parent: '2', name: 'Cardbord Box', source: '/static/sprites/cardbox.jpg' }
     ]
     myDiagram.model = model
   }

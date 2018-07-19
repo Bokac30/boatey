@@ -1,9 +1,10 @@
 <template>
   <div id="app">
-    <!-- Navbar -->
-    <top-header v-on:toggle-event="changeActive" :toggled.sync="isActive" />
 
-    <div id="wrapper" :class="{toggled: isActive}">
+    <!-- Navbar -->
+    <top-header />
+
+    <div id="wrapper" :class="{toggled: $toggledMenu}">
 
         <!-- Sidebar -->
         <sidebar />
@@ -13,7 +14,9 @@
         <div id="page-content-wrapper">
 
             <div class="container-fluid">
-                <router-view/>
+                <div style="margin-left:5px;">
+                  <router-view/>
+                </div>
             </div>
         </div>
         <!-- /#page-content-wrapper -->
@@ -26,24 +29,23 @@
 <script>
 import Sidebar from './components/Sidebar'
 import TopHeader from './components/TopHeader'
+import SidebarToggle from './components/mixins/sidebar-toggle'
 
 export default {
   name: 'App',
+  mixins: [SidebarToggle],
   components: {
     Sidebar,
     TopHeader
-  }
-  ,data () {
-    return {
-      isActive: true
-    }
+  },
+  data () {
+    return { }
   },
   mounted () {
   },
   methods: {
-    changeActive () {
-      this.isActive = !this.isActive
-    }
+    foo () { },
+    bar () { }
   }
 }
 </script>
