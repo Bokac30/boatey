@@ -12,22 +12,22 @@
                   </router-link>
                 </li>
                 <li>
-                  <a href="#">
+                  <router-link to="/chart1">
                   <font-awesome-icon icon="industry" />
                     <span class="menu-item">Shortcuts</span>
-                    </a>
+                  </router-link>
+                </li>
+                <li>
+                    <router-link to="/chart1">
+                      <font-awesome-icon icon="box" />
+                      <span class="menu-item">Events</span>
+                    </router-link>
                 </li>
                 <li>
                     <router-link to="/users">
                       <font-awesome-icon icon="user" />
                       <span class="menu-item">Users</span>
                     </router-link>
-                </li>
-                <li>
-                    <a href="#">
-                      <font-awesome-icon icon="box" />
-                      <span class="menu-item">Events</span>
-                      </a>
                 </li>
                 <li>
                     <a href="#">
