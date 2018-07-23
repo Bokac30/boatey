@@ -1,5 +1,3 @@
-@import "_variables.scss";
-
 body {
   overflow-x: hidden;
 }
@@ -38,7 +36,7 @@ body {
 #page-content-wrapper {
   width: 100%;
   position: absolute;
-  padding-left: $colapsed-menu-width;
+  padding-left: 60px;
 }
 
 #wrapper.toggled #page-content-wrapper {
@@ -47,9 +45,7 @@ body {
   padding: 0;
 }
 
-
 /* Sidebar Styles */
-
 .sidebar-nav {
   position: absolute;
   top: 0;
@@ -80,40 +76,59 @@ body {
   text-decoration: none;
 }
 
-.sidebar-nav>.sidebar-brand {
+.sidebar-nav > .sidebar-brand {
   height: 65px;
   font-size: 18px;
   line-height: 60px;
 }
 
-.sidebar-nav>.sidebar-brand a {
+.sidebar-nav > .sidebar-brand a {
   color: #999999;
 }
 
-.sidebar-nav>.sidebar-brand a:hover {
+.sidebar-nav > .sidebar-brand a:hover {
   color: #fff;
   background: none;
 }
 
-@media(min-width:768px) {
+@media (min-width: 768px) {
   #wrapper {
     padding-left: 0;
   }
+
   #wrapper.toggled {
     padding-left: 250px;
   }
+
   #sidebar-wrapper {
-    width: $colapsed-menu-width;
+    width: 60px;
   }
+
   #wrapper.toggled #sidebar-wrapper {
     width: 250px;
   }
+
   #page-content-wrapper {
     /* padding: 20px; */
     position: relative;
   }
+
   #wrapper.toggled #page-content-wrapper {
     position: relative;
     margin-right: 0;
   }
 }
+.sidebar-test {
+  color: black;
+  background-color: aqua;
+}
+
+.test {
+  width: 60px;
+}
+
+.bar {
+  height: 60px;
+}
+
+/*# sourceMappingURL=common.css.map */

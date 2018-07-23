@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="myDiagramDiv"></div>
+    <div id='myDiagramDiv'></div>
   </div>
 </template>
 
@@ -12,88 +12,92 @@ export default {
   },
   mounted () {
     var $ = go.GraphObject.make  // for conciseness in defining templates
-    var myDiagram =
-      $(go.Diagram, "myDiagramDiv",  // must be the ID or reference to div
-        {
-          // layout: $(go.ParallelLayout, { layerSpacing: 20, nodeSpacing: 10 })
-          layout: 'ParallelLayout'
-        })
+    var myDiagram = $(go.Diagram, 'myDiagramDiv',  // must be the ID or reference to div
+    {
+      layout: $(go.ParallelLayout, { layerSpacing: 20, nodeSpacing: 10 })
+    })
+
     // define the Node templates
     myDiagram.nodeTemplate =
-      $(go.Node, "Auto",
+      $(go.Node, 'Auto',
         { locationSpot: go.Spot.Center },
-        $(go.Shape, "Rectangle",
-          { fill: "wheat", stroke: null, strokeWidth: 0 }),
+        $(go.Shape, 'Rectangle',
+          { fill: 'wheat', stroke: null, strokeWidth: 0 }),
         $(go.TextBlock, { margin: 3 },
-          new go.Binding("text"))
+          new go.Binding('text'))
       )
-    myDiagram.nodeTemplateMap.add("Split",
-      $(go.Node, "Auto",
+
+    myDiagram.nodeTemplateMap.add('Split',
+      $(go.Node, 'Auto',
         { locationSpot: go.Spot.Center },
-        $(go.Shape, "Diamond",
-          { fill: "deepskyblue", stroke: null, strokeWidth: 0,
+        $(go.Shape, 'Diamond',
+          { fill: 'deepskyblue', stroke: null, strokeWidth: 0,
             desiredSize: new go.Size(28, 28) }),
         $(go.TextBlock,
-          new go.Binding("text"))
+          new go.Binding('text'))
       ))
-    myDiagram.nodeTemplateMap.add("Merge",
-      $(go.Node, "Auto",
+
+    myDiagram.nodeTemplateMap.add('Merge',
+      $(go.Node, 'Auto',
         { locationSpot: go.Spot.Center },
-        $(go.Shape, "Circle",
-          { fill: "deepskyblue", stroke: null, strokeWidth: 0,
+        $(go.Shape, 'Circle',
+          { fill: 'deepskyblue', stroke: null, strokeWidth: 0,
             desiredSize: new go.Size(28, 28) }),
         $(go.TextBlock,
-          new go.Binding("text"))
+          new go.Binding('text'))
       ))
+
     // define the Link template to be minimal
     myDiagram.linkTemplate =
       $(go.Link,
         { routing: go.Link.Orthogonal, corner: 5, reshapable: true },
         $(go.Shape,
-          { stroke: "gray", strokeWidth: 1.5 })
+          { stroke: 'gray', strokeWidth: 1.5 })
       )
+
     // define the Group template to be fairly simple
     myDiagram.groupTemplate =
-      $(go.Group, "Auto",
+      $(go.Group, 'Auto',
         {
-          selectable: false,
-          // layout: $(go.ParallelLayout, { layerSpacing: 20, nodeSpacing: 10 })
-          layout: 'ParallelLayout'
+          selectable: false
+          // layout: $(ParallelLayout, { layerSpacing: 20, nodeSpacing: 10 })
         },
-        $(go.Shape, { fill: "transparent", stroke: "darkgoldenrod" }),
+        $(go.Shape, { fill: 'transparent', stroke: 'darkgoldenrod' }),
         $(go.Placeholder, { padding: 10 }),
-        $("SubGraphExpanderButton", { alignment: go.Spot.TopLeft })
+        $('SubGraphExpanderButton', { alignment: go.Spot.TopLeft })
       )
+
     var model = $(go.GraphLinksModel)
     model.nodeDataArray = [
       { key: -1, isGroup: true },
       { key: -2, isGroup: true },
       { key: -3, isGroup: true },
-      { key: 1, text: "S", category: "Split", group: -1 },
-      { key: 2, text: "C", group: -1 },
-      { key: 3, text: "Longer Node", group: -1 },
-      { key: 4, text: "A", group: -1 },
-      { key: 5, text: "B\nB", group: -1 },
-      { key: 6, text: "Another", group: -1 },
-      { key: 9, text: "J", category: "Merge", group: -1 },
-      { key: 11, text: "T", category: "Split", group: -2 },
-      { key: 12, text: "C", group: -2 },
-      { key: 13, text: "Here", group: -2 },
-      { key: 14, text: "D", group: -2 },
-      { key: 15, text: "Everywhere", group: -2 },
-      { key: 16, text: "EEEEE", group: -2 },
-      { key: 19, text: "K", category: "Merge", group: -2 },
-      { key: 21, text: "U", category: "Split", group: -3 },
-      { key: 22, text: "F", group: -3 },
-      { key: 23, text: "Medium\nTall\nNode", group: -3 },
-      { key: 24, text: "G", group: -3 },
-      { key: 25, text: "AS", group: -3 },
-      { key: 26, text: "H\nHH\nHHH", group: -3 },
-      { key: 27, text: "I", group: -3 },
-      { key: 29, text: "L", category: "Merge", group: -3 },
-      { key: 101, text: "0", category: "Split" },
-      { key: 107, text: "ABCDEFG" },
-      { key: 109, text: "*", category: "Merge" }
+
+      { key: 1, text: 'S', category: 'Split', group: -1 },
+      { key: 2, text: 'C', group: -1 },
+      { key: 3, text: 'Longer Node', group: -1 },
+      { key: 4, text: 'A', group: -1 },
+      { key: 5, text: 'B\nB', group: -1 },
+      { key: 6, text: 'Another', group: -1 },
+      { key: 9, text: 'J', category: 'Merge', group: -1 },
+      { key: 11, text: 'T', category: 'Split', group: -2 },
+      { key: 12, text: 'C', group: -2 },
+      { key: 13, text: 'Here', group: -2 },
+      { key: 14, text: 'D', group: -2 },
+      { key: 15, text: 'Everywhere', group: -2 },
+      { key: 16, text: 'EEEEE', group: -2 },
+      { key: 19, text: 'K', category: 'Merge', group: -2 },
+      { key: 21, text: 'U', category: 'Split', group: -3 },
+      { key: 22, text: 'F', group: -3 },
+      { key: 23, text: 'Medium\nTall\nNode', group: -3 },
+      { key: 24, text: 'G', group: -3 },
+      { key: 25, text: 'AS', group: -3 },
+      { key: 26, text: 'H\nHH\nHHH', group: -3 },
+      { key: 27, text: 'I', group: -3 },
+      { key: 29, text: 'L', category: 'Merge', group: -3 },
+      { key: 101, text: '0', category: 'Split' },
+      { key: 107, text: 'ABCDEFG' },
+      { key: 109, text: '*', category: 'Merge' }
     ]
     model.linkDataArray = [
       { from: 1, to: 2 },

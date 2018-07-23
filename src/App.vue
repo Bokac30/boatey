@@ -76,35 +76,6 @@ body {
 }
 
 /*
- * Navbar
- */
-
-.navbar-brand {
-  padding-top: .75rem;
-  padding-bottom: .75rem;
-  font-size: 1rem;
-  /* background-color: rgba(0, 0, 0, .25); */
-  /* box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25); */
-}
-
-.navbar .form-control {
-  padding: .75rem 1rem;
-  border-width: 1px;
-  border-radius: 5px 5px 5px;
-}
-
-.form-control-light {
-  color: #333;
-  background-color: rgba(255, 255, 255, .5);
-  border-color: rgba(255, 255, 255, .5);
-}
-
-.form-control-dark:focus {
-  border-color: transparent;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
-}
-
-/*
  * Utilities
  */
 

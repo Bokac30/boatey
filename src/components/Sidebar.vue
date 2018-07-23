@@ -2,9 +2,9 @@
   <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
-                    <a href="#">
-                        John Doe
-                    </a>
+                    <router-link to="/">
+                        <font-awesome-icon icon="user" />
+                    </router-link>
                 </li>
                 <li><router-link to="/dashboard">
                   <font-awesome-icon icon="tachometer-alt" />
@@ -18,13 +18,13 @@
                   </router-link>
                 </li>
                 <li>
-                    <router-link to="/chart1">
+                    <router-link to="/chart2">
                       <font-awesome-icon icon="box" />
                       <span class="menu-item">Events</span>
                     </router-link>
                 </li>
                 <li>
-                    <router-link to="/users">
+                    <router-link to="/chart3">
                       <font-awesome-icon icon="user" />
                       <span class="menu-item">Users</span>
                     </router-link>

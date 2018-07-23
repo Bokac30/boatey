@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-12 bg-light">
-        <div class="p-2">
+        <div class="p-2 value-chain-header">
           <h3>
             <img src="/static/images/value-chain-icon.jpg" />
             Value Chain Traceability
@@ -47,5 +47,8 @@ export default {
 }
 </script>
 <style scoped>
-
+  .value-chain-header {
+    border-top: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+  }
 </style>
