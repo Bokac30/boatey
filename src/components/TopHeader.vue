@@ -4,7 +4,7 @@
       <a class="navbar-brand" href="#">
         <img src="/static/images/trace-master-logo.jpg" class="pl-3 pr-3" />
         <button @click="toggleSidebar" class="burger-icon pl-3 pr-3">
-          <font-awesome-icon icon="bars" />
+          <awesome icon="bars" />
         </button>
       </a>
       <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +15,7 @@
         <form class="form-inline my-2 my-lg-0  mr-auto">
           <input class="form-control mr-sm-2" type="search" placeholder="Search Item / Batch / Pallete" aria-label="Search">
           <button class="btn my-2 my-sm-0" type="submit">
-            <font-awesome-icon icon="search" />
+            <awesome icon="search" />
           </button>
         </form>
         <ul class="navbar-nav">

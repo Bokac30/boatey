@@ -7,10 +7,12 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 // import './css/simple-sidebar.css'
 import go from 'gojs'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCoffee, faBox, faHome, faBars, faSearch, faUser, faTruck, faPhone, faBuilding, faTachometerAlt, faIndustry, faComment } from '@fortawesome/free-solid-svg-icons'
+import { faBox, faHome, faBars, faSearch, faUser, faTruck, faPhone, faBuilding, faTachometerAlt, faIndustry, faComment, faChartBar, faProjectDiagram, faReplyAll, faShippingFast, faPallet, faClipboardCheck, faCogs, faTruckMoving, faCubes, faShip, faStoreAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
 import './css/style.css'
 import './css/common.css'
+// import './scss/common.scss'
 
 import store from './store'
 import _ from 'lodash'
@@ -24,9 +26,12 @@ Vue.use(BootstrapVue)
 
 // let $ = JQuery
 
-library.add([faBox, faSearch, faBars, faHome, faCoffee, faUser, faTruck, faPhone, faBuilding, faTachometerAlt, faIndustry, faComment])
+// sidebar main menu
+library.add([faBox, faSearch, faBars, faHome, faUser, faTruck, faPhone, faBuilding, faTachometerAlt, faIndustry, faComment, faChartBar, faProjectDiagram, faReplyAll, faShippingFast, faPallet, faClipboardCheck])
+// sidebar settings
+library.add([faCogs, faTruckMoving, faCubes, faShip, faStoreAlt])
 
-Vue.component('font-awesome-icon', FontAwesomeIcon)
+Vue.component('awesome', FontAwesomeIcon)
 
 Vue.config.productionTip = false
 Vue.use(go)
@@ -40,5 +45,4 @@ new Vue({
   template: '<App/>',
   store,
   components: { App }
-
 })

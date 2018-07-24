@@ -11,9 +11,8 @@ export default {
     return { }
   },
   mounted () {
-    var $ = go.GraphObject.make  // for conciseness in defining templates
-    var myDiagram = $(go.Diagram, 'myDiagramDiv',  // must be the ID or reference to div
-    {
+    var $ = go.GraphObject.make // for conciseness in defining templates
+    var myDiagram = $(go.Diagram, 'myDiagramDiv', {
       layout: $(go.ParallelLayout, { layerSpacing: 20, nodeSpacing: 10 })
     })
 
@@ -28,40 +27,26 @@ export default {
       )
 
     myDiagram.nodeTemplateMap.add('Split',
-      $(go.Node, 'Auto',
-        { locationSpot: go.Spot.Center },
-        $(go.Shape, 'Diamond',
-          { fill: 'deepskyblue', stroke: null, strokeWidth: 0,
-            desiredSize: new go.Size(28, 28) }),
-        $(go.TextBlock,
-          new go.Binding('text'))
+      $(go.Node, 'Auto', { locationSpot: go.Spot.Center },
+        $(go.Shape, 'Diamond', { fill: 'deepskyblue', stroke: null, strokeWidth: 0, desiredSize: new go.Size(28, 28) }),
+        $(go.TextBlock, new go.Binding('text'))
       ))
 
     myDiagram.nodeTemplateMap.add('Merge',
-      $(go.Node, 'Auto',
-        { locationSpot: go.Spot.Center },
-        $(go.Shape, 'Circle',
-          { fill: 'deepskyblue', stroke: null, strokeWidth: 0,
-            desiredSize: new go.Size(28, 28) }),
-        $(go.TextBlock,
-          new go.Binding('text'))
+      $(go.Node, 'Auto', { locationSpot: go.Spot.Center },
+        $(go.Shape, 'Circle', { fill: 'deepskyblue', stroke: null, strokeWidth: 0, desiredSize: new go.Size(28, 28) }),
+        $(go.TextBlock, new go.Binding('text'))
       ))
 
     // define the Link template to be minimal
     myDiagram.linkTemplate =
-      $(go.Link,
-        { routing: go.Link.Orthogonal, corner: 5, reshapable: true },
-        $(go.Shape,
-          { stroke: 'gray', strokeWidth: 1.5 })
+      $(go.Link, { routing: go.Link.Orthogonal, corner: 5, reshapable: true },
+        $(go.Shape, { stroke: 'gray', strokeWidth: 1.5 })
       )
 
     // define the Group template to be fairly simple
     myDiagram.groupTemplate =
-      $(go.Group, 'Auto',
-        {
-          selectable: false
-          // layout: $(ParallelLayout, { layerSpacing: 20, nodeSpacing: 10 })
-        },
+      $(go.Group, 'Auto', { selectable: false },
         $(go.Shape, { fill: 'transparent', stroke: 'darkgoldenrod' }),
         $(go.Placeholder, { padding: 10 }),
         $('SubGraphExpanderButton', { alignment: go.Spot.TopLeft })

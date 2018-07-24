@@ -1,5 +1,5 @@
 <template>
-  <div class="m-1">
+  <div>
     <h3> <span class="hand">[-]</span> TRACK & TRACE - DETAILS</h3>
     <b-table :fields="fields" :items="items">
       <template slot="name" slot-scope="data">

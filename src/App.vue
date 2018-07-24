@@ -14,7 +14,7 @@
         <div id="page-content-wrapper">
 
             <div class="container-fluid">
-                <div style="margin-left:5px;">
+                <div>
                   <router-view/>
                 </div>
             </div>

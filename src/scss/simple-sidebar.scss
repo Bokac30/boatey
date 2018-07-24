@@ -1,6 +1,5 @@
 @import "_variables.scss";
 
-
 /* Sidebar Styles */
 
 .sidebar-nav {
@@ -13,24 +12,30 @@
 }
 
 .sidebar-nav li {
-  text-indent: 20px;
+  text-indent: 25px;
   line-height: 40px;
+  margin-bottom: 2px;
 }
 
 .sidebar-nav li a {
   display: block;
   text-decoration: none;
-  color: #3e5ec1;
+  color: $menu-white-color;
+  background-color: $light-blue-color;
 }
 
 .sidebar-nav li a:hover {
   text-decoration: none;
-  color: #fff;
+  color: $menu-white-color;
   background: rgba(255, 255, 255, 0.2);
 }
 
 .sidebar-nav li a:active, .sidebar-nav li a:focus {
   text-decoration: none;
+  border-left: 10px solid;
+  border-left-color: $azure-blue-color;
+  background-color: $menu-white-color;
+  color: $dark-blue-color;
 }
 
 .sidebar-nav>.sidebar-brand {
@@ -48,8 +53,10 @@
   background: none;
 }
 
-.sidebar-test {
-  color: black;
-  background-color: aqua;
-  border: 1px solid #282d6f;
+.sub-menu li {
+  border-bottom: $menu-white-color;
+}
+
+.sub-menu li a {
+  color: $menu-white-color;
 }

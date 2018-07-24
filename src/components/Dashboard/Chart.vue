@@ -15,7 +15,7 @@ export default {
 
     // the template we defined earlier
     myDiagram.nodeTemplate = $(go.Node, 'Vertical', { background: '#fff' },
-      $(go.Picture, { margin: 5, width: 50, height: 50, background: 'white' }, new go.Binding('source')),
+      $(go.Picture, { margin: 5, width: 50, height: 50, background: 'white' }, new go.Binding('source'))
       // $(go.TextBlock, 'foo', { margin: 10, stroke: 'black', font: 'bold 16px sans-serif' }, new go.Binding('text', 'name'))
     )
 
@@ -40,7 +40,8 @@ export default {
       { key: 7, group: 1, name: 'Cardbord Box', source: '/static/sprites/cardbox.jpg' }
     ]
 
-    myDiagram.model.linkDataArray = [
+    myDiagram.model.linkDataArray =
+    [
       { from: 1, to: 2 },
       { from: 2, to: 3 },
       { from: 3, to: 4 },

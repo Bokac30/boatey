@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div>
     <div class="row">
       <div class="col-12 bg-light">
         <div class="p-2 value-chain-header">

@@ -1,71 +1,114 @@
 <template>
   <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <router-link to="/">
-                        <font-awesome-icon icon="user" />
-                    </router-link>
-                </li>
-                <li><router-link to="/dashboard">
-                  <font-awesome-icon icon="tachometer-alt" />
-                  <span class="menu-item">Dashboard</span>
-                  </router-link>
-                </li>
-                <li>
-                  <router-link to="/chart1">
-                  <font-awesome-icon icon="industry" />
-                    <span class="menu-item">Shortcuts</span>
-                  </router-link>
-                </li>
-                <li>
-                    <router-link to="/chart2">
-                      <font-awesome-icon icon="box" />
-                      <span class="menu-item">Events</span>
-                    </router-link>
-                </li>
-                <li>
-                    <router-link to="/chart3">
-                      <font-awesome-icon icon="user" />
-                      <span class="menu-item">Users</span>
-                    </router-link>
-                </li>
-                <li>
-                    <a href="#">
-                      <font-awesome-icon icon="truck" />
-                      <span class="menu-item">Services</span>
-                      </a>
-                </li>
-                <li>
-                    <a href="#">
-                      <font-awesome-icon icon="phone" />
-                      <span class="menu-item">Contact</span>
-                      </a>
-                </li>
-                                <li>
-                    <a href="#">
-                      <font-awesome-icon icon="building" />
-                      <span class="menu-item">About</span>
-                      </a>
-                </li>
-            </ul>
-            <div class="sidebar-bottom">
-              <div class="sidebar-bootom-item" title="Settings">
-                <img src="/static/images/sidebar/iconSettings.jpg" alt="Settings" />
-              </div>
-              <div class="sidebar-bootom-item" title="Suppliers">
-                <img src="/static/images/sidebar/iconSuppliers.jpg" alt="Suppliers" />
-              </div>
-              <div class="sidebar-bootom-item" title="Distributors">
-                <img src="/static/images/sidebar/iconDistributors.jpg" alt="Distributors" />
-              </div>
-              <div class="sidebar-bootom-item" title="Logistic Partners">
-                <img src="/static/images/sidebar/iconLogisticPartners.jpg" alt="Logistic Partners" />
-              </div>
-              <div class="sidebar-bootom-item" title="Retailers">
-                <img src="/static/images/sidebar/iconRetailers.jpg" alt="Retailers" />
-              </div>
-            </div>
-        </div>
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <router-link to="/">
+          <awesome icon="user" />
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/dashboard">
+          <awesome icon="chart-bar" />
+          <span class="menu-item">DASHBOARD</span>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/chart1">
+          <awesome icon="project-diagram" />
+          <span class="menu-item">TRACEABILITY</span>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/chart2">
+          <awesome icon="clipboard-check" />
+          <span class="menu-item">CHEKTESTICON</span>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/chart2" v-b-toggle.collapse1>
+          <awesome icon="reply-all" />
+          <span class="menu-item">RECALL MANAGEMENT</span>
+        </router-link>
+        <b-collapse id="collapse1" class="mt-2">
+          <ul class="sub-menu">
+            <li>
+              <router-link to="/chart1">
+                Recall Plan
+              </router-link>
+            </li>
+            <li>
+              <router-link to="/chart1">
+                Claims Management
+              </router-link>
+            </li>
+            <li>
+              <router-link to="/chart1">
+                Recall Case overview
+              </router-link>
+            </li>
+            <li>
+              <router-link to="/chart1">
+                Recall Termination
+              </router-link>
+            </li>
+          </ul>
+        </b-collapse>
+      </li>
+      <li>
+        <router-link to="/chart3">
+          <awesome icon="shipping-fast" />
+          <span class="menu-item">DISTRIBUTION CONTROL</span>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/chart3">
+          <awesome icon="pallet" />
+          <span class="menu-item">INCUBATION</span>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/chart3">
+          <awesome icon="clipboard-check" />
+          <span class="menu-item">COMPLIANCY</span>
+        </router-link>
+      </li>
+      <li>
+        <div class="sidebar-bottom sidebar-nav m-1">
+      <div class="sidebar-bootom-item" title="Settings">
+        <router-link to="/chart1">
+          <awesome icon="cogs" />
+          <span class="menu-item">Settings</span>
+        </router-link>
+      </div>
+      <div class="sidebar-bootom-item" title="Suppliers">
+        <router-link to="/chart2">
+          <awesome icon="truck-moving" />
+          <span class="menu-item">Suppliers</span>
+        </router-link>
+      </div>
+      <div class="sidebar-bootom-item" title="Distributors">
+        <router-link to="/chart2">
+          <awesome icon="cubes" />
+          <span class="menu-item">Distributors</span>
+        </router-link>
+      </div>
+      <div class="sidebar-bootom-item" title="Logistic Partners">
+        <router-link to="/chart2">
+          <awesome icon="ship" />
+          <span class="menu-item">Logistic Partners</span>
+        </router-link>
+      </div>
+      <div class="sidebar-bootom-item" title="Retailers">
+        <router-link to="/chart2">
+          <awesome icon="store-alt" />
+          <span class="menu-item">Retailers</span>
+        </router-link>
+      </div>
+    </div>
+      </li>
+    </ul>
+
+  </div>
 </template>
 <script>
 export default {
@@ -85,12 +128,14 @@ export default {
   }
 
   .sidebar-bottom {
-    position: absolute;
-    top: 350px;
+    position: inherit;
   }
 
   .sidebar-bootom-item {
-    margin: 20px;
     cursor: pointer;
+  }
+  .sidebar-bootom-item a {
+    color: #999;
+    background: #292d70;
   }
 </style>
