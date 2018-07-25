@@ -5,7 +5,7 @@
     </div>
     <div>
         <div class="bg-light p-1 mt-2">
-          <h3 class="dark">Distribution Info</h3>
+          <h6>DISTRIBUTION INFO</h6>
         </div>
         <ul>
           <li>A item Produced in <span class="badge badge-primary">Factory</span></li>

@@ -39,13 +39,17 @@
 }
 
 .sidebar-nav>.sidebar-brand {
-  height: 65px;
+  height: 80px;
   font-size: 18px;
   line-height: 60px;
 }
 
 .sidebar-nav>.sidebar-brand a {
-  color: #999999;
+  color: $azure-blue-color;
+  background: none;
+  color: $azure-blue-color;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 .sidebar-nav>.sidebar-brand a:hover {

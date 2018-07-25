@@ -1,9 +1,9 @@
 <template>
   <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
-      <li class="sidebar-brand">
+      <li class="sidebar-brand p-4">
         <router-link to="/">
-          <awesome icon="user" />
+          <awesome icon="user" /> John Doe
         </router-link>
       </li>
       <li>

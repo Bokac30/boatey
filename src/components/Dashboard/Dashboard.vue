@@ -13,7 +13,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row m-1 p-1 rounded dashboard-content">
       <div class="col-md-9 col-sm-12">
         <dashboard-chart />
         <dashboard-table />
@@ -51,4 +51,9 @@ export default {
     border-top: 1px solid #e4e4e4;
     border-bottom: 1px solid #e4e4e4;
   }
+
+  .dashboard-content {
+    background-color: #fff;
+  }
+
 </style>

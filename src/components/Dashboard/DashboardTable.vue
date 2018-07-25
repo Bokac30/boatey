@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <h3> <span class="hand">[-]</span> TRACK & TRACE - DETAILS</h3>
-    <b-table :fields="fields" :items="items">
+  <div class="mt-2">
+    <div class="bg-light p-1">
+      <h6>TRACK & TRACE - DETAILS</h6>
+    </div>
+    <b-table :fields="fields" :items="items" :small="true" :striped="true" :outlined="true">
       <template slot="name" slot-scope="data">
         <a :href="`#${data.value.replace(/[^a-z]+/i,'-').toLowerCase()}`">
           {{data.value}}
@@ -13,7 +15,7 @@
         </router-link>
       </template>
       <template slot="actions-button" slot-scope="data">
-        <button class="btn action-button">{{data.value}}</button>
+        <button class="btn action-button btn-sm">{{data.value}}</button>
       </template>
     </b-table>
   </div>

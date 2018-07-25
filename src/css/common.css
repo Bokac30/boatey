@@ -31,12 +31,16 @@
   color: #292d70; }
 
 .sidebar-nav > .sidebar-brand {
-  height: 65px;
+  height: 80px;
   font-size: 18px;
   line-height: 60px; }
 
 .sidebar-nav > .sidebar-brand a {
-  color: #999999; }
+  color: #00c0ef;
+  background: none;
+  color: #00c0ef;
+  font-weight: bold;
+  font-size: 14px; }
 
 .sidebar-nav > .sidebar-brand a:hover {
   color: #fff;
@@ -110,3 +114,7 @@ body {
 
 .bar {
   height: 60px; }
+
+h6 {
+  color: #292d70;
+  font-weight: 200; }
