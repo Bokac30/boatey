@@ -24,7 +24,10 @@
         </router-link>
       </template>
       <template slot="actions-button" slot-scope="data">
-        <button class="btn btn-light action-button btn-sm">{{data.value}}</button>
+        <div class="float-right">
+<button class="btn btn-light action-button btn-sm">{{data.value}}</button>
+        </div>
+
       </template>
       <template slot="date" slot-scope="data">
         <span>
@@ -113,9 +116,9 @@ export default {
 
 <style scoped>
   .action-button {
-    width: 150px;
+    width: 100px;
     border-color: blue;
-    font-size: 9pt;
+    font-size: 8pt;
   }
   .data-table-light {
     font-size: 9pt;
