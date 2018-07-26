@@ -12,7 +12,6 @@
 }
 
 .sidebar-nav li {
-  text-indent: 25px;
   line-height: 40px;
   margin-bottom: 2px;
 }
@@ -22,6 +21,17 @@
   text-decoration: none;
   color: $menu-white-color;
   background-color: $light-blue-color;
+
+  .menu-icon {
+    width: 40px;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .menu-item {
+    font-size: 10pt;
+    font-weight: bold;
+  }
 }
 
 .sidebar-nav li a:hover {
@@ -30,22 +40,33 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
-.sidebar-nav li a:active, .sidebar-nav li a:focus {
+.sidebar-nav>li>a:active, .sidebar-nav>li>a:focus {
   text-decoration: none;
-  border-left: 10px solid;
+  border-left: 5px solid;
   border-left-color: $azure-blue-color;
   background-color: $menu-white-color;
   color: $dark-blue-color;
 }
 
+.toggled {
+  .sidebar-nav>li>a:active, .sidebar-nav>li>a:focus {
+    text-decoration: none;
+    border-left: 10px solid;
+    border-left-color: $azure-blue-color;
+    background-color: $menu-white-color;
+    color: $dark-blue-color;
+  }
+}
+
 .sidebar-nav>.sidebar-brand {
   height: 80px;
   font-size: 18px;
-  line-height: 60px;
+  line-height: 30px;
+  text-align: start;
+  color: $azure-blue-color;
 }
 
 .sidebar-nav>.sidebar-brand a {
-  color: $azure-blue-color;
   background: none;
   color: $azure-blue-color;
   font-weight: bold;
@@ -56,11 +77,34 @@
   color: #fff;
   background: none;
 }
-
+.sub-menu {
+  margin: 0;
+  padding: 0;
+}
 .sub-menu li {
   border-bottom: $menu-white-color;
+  padding-left: 5px;
+  line-height: 30px;
 }
 
 .sub-menu li a {
-  color: $menu-white-color;
+  background: none;
+  text-indent: 10px;
 }
+
+.sub-menu li a .menu-item {
+  display: none;
+}
+.toggled {
+  .sub-menu li a .menu-item {
+    display: inline-block;
+  }
+}
+
+.sidebar-bottom-item .menu-item {
+  color: $menu-white-color;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+

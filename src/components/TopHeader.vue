@@ -13,8 +13,8 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <form class="form-inline my-2 my-lg-0  mr-auto">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search Item / Batch / Pallete" aria-label="Search">
-          <button class="btn my-2 my-sm-0" type="submit">
+          <input class="form-control-sm mr-sm-2 bg-light fsml" type="search" placeholder="Search Item / Batch / Pallete" aria-label="Search">
+          <button class="btn btn-sm my-2 my-sm-0 bg-light border" type="submit">
             <awesome icon="search" />
           </button>
         </form>
@@ -88,14 +88,16 @@ export default {
  */
 
 .navbar-brand {
-  padding-top: .50rem;
-  padding-bottom: .50rem;
+  /* padding-top: .50rem;
+  padding-bottom: .50rem; */
   font-size: 1rem;
+  position: relative;
+  top: 0;
   /* background-color: rgba(0, 0, 0, .25); */
   /* box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25); */
 }
 
-.navbar .form-control {
+.navbar .form-control-sm {
   border-width: 1px;
   border-radius: 5px 5px 5px;
 }
@@ -114,5 +116,8 @@ export default {
 .nav-separator {
   padding-left: 5px;
   padding-right: 5px;
+}
+.fsml {
+  font-size: .8em
 }
 </style>

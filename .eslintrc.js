@@ -28,6 +28,7 @@ module.exports = {
   },
   globals: {
     '_': false,
-    'go': false
+    'go': false,
+    'mapboxgl': true
   }
 }

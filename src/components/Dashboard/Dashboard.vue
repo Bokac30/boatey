@@ -3,10 +3,10 @@
     <div class="row">
       <div class="col-12 bg-light">
         <div class="p-2 value-chain-header">
-          <h3>
+          <h6>
             <img src="/static/images/value-chain-icon.jpg" />
             Value Chain Traceability
-          </h3>
+          </h6>
           <small>
             Value Chain Traceability solution collects all Critical Tracking Events of your products at Item / Batch / Pallete level to give you  a real-time visualization of your supply chain.
           </small>

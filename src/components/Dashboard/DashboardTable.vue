@@ -1,9 +1,18 @@
 <template>
-  <div class="mt-2">
+  <div class="mt-2 data-table-light">
     <div class="bg-light p-1">
       <h6>TRACK & TRACE - DETAILS</h6>
     </div>
     <b-table :fields="fields" :items="items" :small="true" :striped="true" :outlined="true">
+      <template slot="HEAD_event" slot-scope="data">
+        <!-- A custom formatted header cell for field 'name' -->
+        <span class="tbl-header">
+          {{data.label}}
+        </span>
+      </template>
+      <template slot="event" slot-scope="data">
+        <strong>{{data.value}}</strong>
+      </template>
       <template slot="name" slot-scope="data">
         <a :href="`#${data.value.replace(/[^a-z]+/i,'-').toLowerCase()}`">
           {{data.value}}
@@ -15,7 +24,12 @@
         </router-link>
       </template>
       <template slot="actions-button" slot-scope="data">
-        <button class="btn action-button btn-sm">{{data.value}}</button>
+        <button class="btn btn-light action-button btn-sm">{{data.value}}</button>
+      </template>
+      <template slot="date" slot-scope="data">
+        <span>
+          {{data.value}}
+        </span>
       </template>
     </b-table>
   </div>
@@ -100,5 +114,10 @@ export default {
 <style scoped>
   .action-button {
     width: 150px;
+    border-color: blue;
+    font-size: 9pt;
+  }
+  .data-table-light {
+    font-size: 9pt;
   }
 </style>

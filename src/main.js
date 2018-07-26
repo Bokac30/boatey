@@ -9,6 +9,9 @@ import go from 'gojs'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faBox, faHome, faBars, faSearch, faUser, faTruck, faPhone, faBuilding, faTachometerAlt, faIndustry, faComment, faChartBar, faProjectDiagram, faReplyAll, faShippingFast, faPallet, faClipboardCheck, faCogs, faTruckMoving, faCubes, faShip, faStoreAlt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+// import moment from 'moment'
+
+// import { Layer as L } from 'leaflet'
 
 import store from './store'
 import _ from 'lodash'
@@ -19,10 +22,16 @@ import './css/style.css'
 import './css/common.css'
 // import './scss/common.scss'
 
+// import 'leaflet/dist/leaflet.css'
+import 'mapbox-gl/dist/mapbox-gl.css'
+
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.use(BootstrapVue)
+// Vue.use(mapboxgl)
+// Vue.use(L)
+// Vue.use(moment)
 
 // let $ = JQuery
 
