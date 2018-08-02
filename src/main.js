@@ -7,16 +7,14 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 // import './css/simple-sidebar.css'
 import go from 'gojs'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faBox, faHome, faBars, faSearch, faUser, faTruck, faPhone, faBuilding, faTachometerAlt, faIndustry, faComment, faChartBar, faProjectDiagram, faReplyAll, faShippingFast, faPallet, faClipboardCheck, faCogs, faTruckMoving, faCubes, faShip, faStoreAlt } from '@fortawesome/free-solid-svg-icons'
+import { faBox, faHome, faBars, faSearch, faUser, faTruck, faPhone, faBuilding, faTachometerAlt, faIndustry, faComment, faChartBar, faProjectDiagram, faReplyAll, faShippingFast, faPallet, faClipboardCheck, faCogs, faTruckMoving, faCubes, faShip, faStoreAlt, faLock } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import debounce from './helpers/debounce'
 // import moment from 'moment'
 
 // import { Layer as L } from 'leaflet'
 
 import store from './store'
-import _ from 'lodash'
-
-// import JQuery from 'jquery'
 
 import './css/style.css'
 import './css/common.css'
@@ -33,8 +31,8 @@ Vue.use(BootstrapVue)
 // Vue.use(L)
 // Vue.use(moment)
 
-// let $ = JQuery
-
+// common icons
+library.add(faLock)
 // sidebar main menu
 library.add([faBox, faSearch, faBars, faHome, faUser, faTruck, faPhone, faBuilding, faTachometerAlt, faIndustry, faComment, faChartBar, faProjectDiagram, faReplyAll, faShippingFast, faPallet, faClipboardCheck])
 // sidebar settings
@@ -44,8 +42,7 @@ Vue.component('awesome', FontAwesomeIcon)
 
 Vue.config.productionTip = false
 Vue.use(go)
-Vue.use(_)
-// Vue.use($)
+Vue.use(debounce)
 
 /* eslint-disable no-new */
 new Vue({

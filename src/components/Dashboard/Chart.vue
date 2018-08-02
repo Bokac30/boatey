@@ -1,17 +1,69 @@
 <template>
   <div>
+    <div>
+      <b-form-group label="Radios using sub-components">
+        <b-form-radio-group id="radios2" v-model="layoutAngle" name="radioSubComponent" @change="debounceChange">
+          <b-form-radio value="0">Angle at 0 degrees</b-form-radio>
+          <b-form-radio value="90">Angle at 90 degrees</b-form-radio>
+          <b-form-radio value="180">Angle at 180 degrees</b-form-radio>
+          <b-form-radio value="360">Angle at 360 degrees</b-form-radio>
+        </b-form-radio-group>
+      </b-form-group>
+    </div>
+    <div>
+      Angle: {{layoutAngle}} and change event: {{fired}}
+    </div>
     <div id='myDiagramDiv' style='border: solid 1px #ccc; width:100%; height:300px'></div>
   </div>
 </template>
 <script>
+import _ from 'lodash'
 export default {
   name: 'DashboardChart',
   data () {
-    return {}
+    return {
+      diagram: {},
+      layoutAngle: 0,
+      fired: ''
+    }
   },
+  methods: {
+
+    changeAngle: () => {
+      let angle = this.layoutAngle
+      let myDiagram = this.diagram
+      myDiagram.startTransaction('change Layout')
+      let lay = myDiagram.layout
+
+      angle = parseFloat(angle, 10)
+      lay.angle = angle
+      myDiagram.commitTransaction('change Layout')
+
+      this.fired = new Date().toLocaleTimeString()
+      console.log(angle)
+    },
+
+    debounceChange: _.debounce(function () {
+      let angle = this.layoutAngle
+      let myDiagram = this.diagram
+      myDiagram.startTransaction('change Layout')
+      let lay = myDiagram.layout
+
+      angle = parseFloat(angle, 10)
+      lay.angle = angle
+      myDiagram.commitTransaction('change Layout')
+
+      this.fired = new Date().toLocaleTimeString()
+      console.log(angle)
+    }, 500)
+  },
+
   mounted () {
     var $ = go.GraphObject.make
-    var myDiagram = $(go.Diagram, 'myDiagramDiv')
+    var myDiagram = $(go.Diagram, 'myDiagramDiv', {
+      initialAutoScale: go.Diagram.UniformToFill,
+      layout: $(go.TreeLayout, { comparer: go.LayoutVertex.smartComparer })
+    })
 
     // the template we defined earlier
     myDiagram.nodeTemplate = $(go.Node, 'Vertical', { background: '#fff' },
@@ -48,6 +100,8 @@ export default {
       { from: 4, to: 5 },
       { from: 5, to: 6 }
     ]
+
+    this.diagram = myDiagram
   }
 }
 </script>

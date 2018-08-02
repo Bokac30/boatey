@@ -2,12 +2,12 @@
   <div id="app">
 
     <!-- Navbar -->
-    <top-header />
+    <top-header v-if="authenticated" />
 
     <div id="wrapper" :class="{toggled: $toggledMenu}">
 
         <!-- Sidebar -->
-        <sidebar />
+        <sidebar v-if="authenticated" />
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
@@ -15,7 +15,7 @@
 
             <div class="container-fluid">
                 <div>
-                  <router-view/>
+                  <router-view @authenticated="setAuthenticated" />
                 </div>
             </div>
         </div>
@@ -39,13 +39,26 @@ export default {
     TopHeader
   },
   data () {
-    return { }
+    return {
+      authenticated: false,
+      mockAccount: {
+        username: 'demo',
+        password: 'demo'
+      }
+    }
   },
   mounted () {
+    if (!this.authenticated) {
+      this.$router.replace({ name: 'Login' })
+    }
   },
   methods: {
-    foo () { },
-    bar () { }
+    setAuthenticated (status) {
+      this.authenticated = status
+    },
+    logout () {
+      this.authenticated = false
+    }
   }
 }
 </script>
