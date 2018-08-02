@@ -52,7 +52,7 @@
              <img src="/static/images/navbar/topBarIconSeparator.jpg" />
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            <a href="#" class="nav-link" @click="logout">
               Logout
               <img src="/static/images/navbar/topBarIconLogout.jpg" />
             </a>
@@ -72,7 +72,12 @@ export default {
   data () {
     return {}
   },
-  methods: {}
+  methods: {
+    logout () {
+      this.$emit('authenticated', false)
+      this.$router.replace({ name: 'Home' })
+    }
+  }
 }
 </script>
 
@@ -117,7 +122,5 @@ export default {
   padding-left: 5px;
   padding-right: 5px;
 }
-.fsml {
-  font-size: .8em
-}
+
 </style>

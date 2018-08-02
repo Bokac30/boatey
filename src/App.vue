@@ -2,7 +2,7 @@
   <div id="app">
 
     <!-- Navbar -->
-    <top-header v-if="authenticated" />
+    <top-header v-if="authenticated" @authenticated="setAuthenticated" />
 
     <div id="wrapper" :class="{toggled: $toggledMenu}">
 
@@ -94,4 +94,9 @@ body {
 
 .border-top { border-top: 1px solid #e5e5e5; }
 .border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+.fsml {
+  font-size: .8em
+}
+
 </style>
