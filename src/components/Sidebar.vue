@@ -37,7 +37,7 @@
         <b-collapse id="collapse1" class="mt-2">
           <ul class="sub-menu">
             <li>
-              <router-link to="/chart1">
+              <router-link to="/dashboard-charts">
                 Recall Plan
               </router-link>
             </li>

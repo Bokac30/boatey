@@ -6,6 +6,7 @@ import Chart1 from '@/components/Chart1'
 import Chart2 from '@/components/Chart2'
 import Chart3 from '@/components/Chart3'
 import Login from '@/views/Login'
+import DashboardCharts from '@/views/DashboardCharts'
 
 Vue.use(Router)
 
@@ -27,6 +28,11 @@ export default new Router({
       path: '/dashboard',
       name: 'Dashboard',
       component: Dashboard
+    },
+    {
+      path: '/dashboard-charts',
+      name: 'DashboardCharts',
+      component: DashboardCharts
     },
     {
       path: '/chart1',

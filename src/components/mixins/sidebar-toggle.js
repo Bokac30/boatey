@@ -10,7 +10,11 @@ const SidebarToggle = {
       toggled: false
     }
   },
-  mounted () { },
+  mounted () {
+    if (this.$parent.authenticated) {
+      this.toggleSidebar()
+    }
+  },
   methods: {
     toggleSidebar () {
       this.toggled = !this.toggled
