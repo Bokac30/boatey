@@ -54,6 +54,9 @@ export default {
   },
   methods: {
     setAuthenticated (status) {
+      if (status === false) {
+        this.$store.dispatch('TOGGLE_SIDEBAR', false)
+      }
       this.authenticated = status
     },
     logout () {
