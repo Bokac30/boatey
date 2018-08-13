@@ -4,6 +4,9 @@
       <!-- <img src='/static/images/map.jpg' alt='Distribution Info' class='w-100'> -->
     </div>
     <div>
+      {{selectedNode}}
+    </div>
+    <div>
         <div class='bg-light p-1 mt-2'>
           <h6>DISTRIBUTION INFO</h6>
         </div>
@@ -14,6 +17,7 @@
           <li>Received by the retailer</li>
       </ul>
       </div>
+
   </div>
 </template>
 
@@ -21,28 +25,101 @@
 // import * as L from 'leaflet/src/leaflet'
 
 import mapboxgl from 'mapbox-gl'
+import EventBus from '../../event-bus'
+import axios from 'axios'
 
 export default {
   name: 'DistributionMap',
   data () {
     return {
+      map: null,
+      selectedNode: '',
       accToken: 'pk.eyJ1IjoidGVzdC10cC1iIiwiYSI6ImNqazJrMmhtcDB0Mzcza210ZmQ2cTdzaGEifQ.HucFeeBxc3o3AUx1nD9e4Q'
     }
   },
+  methods: {
+    getRoute () {
+      var start = [13.0038, 55.605]
+      var end = [13.083698, 55.610588]
+      var directionsRequest = 'https://api.mapbox.com/directions/v5/mapbox/driving/' + start[0] + ',' + start[1] + ';' + end[0] + ',' + end[1] + '?geometries=geojson&access_token=' + mapboxgl.accessToken
+      axios({ method: 'GET', 'url': directionsRequest }).then((response) => {
+        var route = response.data.routes[0].geometry
+        this.map.addLayer({
+          id: 'route1',
+          type: 'line',
+          source: {
+            type: 'geojson',
+            data: {
+              type: 'Feature',
+              geometry: route
+            }
+          },
+          paint: {
+            'line-width': 2
+          }
+        })
+      })
+    },
+    getRoute2 () {
+      var start = [13.0038, 55.605]
+      var end = [13.097102, 55.541131]
+      var directionsRequest = 'https://api.mapbox.com/directions/v5/mapbox/driving/' + start[0] + ',' + start[1] + ';' + end[0] + ',' + end[1] + '?geometries=geojson&access_token=' + mapboxgl.accessToken
+      axios({ method: 'GET', 'url': directionsRequest }).then((response) => {
+        var route = response.data.routes[0].geometry
+        this.map.addLayer({
+          id: 'route2',
+          type: 'line',
+          source: {
+            type: 'geojson',
+            data: {
+              type: 'Feature',
+              geometry: route
+            }
+          },
+          paint: {
+            'line-width': 2
+          }
+        })
+      })
+    },
+    getRoute3 () {
+      var start = [13.0038, 55.605]
+      var end = [13.259255, 55.597705]
+      var directionsRequest = 'https://api.mapbox.com/directions/v5/mapbox/driving/' + start[0] + ',' + start[1] + ';' + end[0] + ',' + end[1] + '?geometries=geojson&access_token=' + mapboxgl.accessToken
+      axios({ method: 'GET', 'url': directionsRequest }).then((response) => {
+        var route = response.data.routes[0].geometry
+        this.map.addLayer({
+          id: 'route3',
+          type: 'line',
+          source: {
+            type: 'geojson',
+            data: {
+              type: 'Feature',
+              geometry: route
+            }
+          },
+          paint: {
+            'line-width': 2
+          }
+        })
+      })
+    }
+  },
+  created () {
+    EventBus.$on('NODE_SELECTED', (selectedNodeName) => {
+      this.selectedNode = selectedNodeName
+      if (selectedNodeName === '') return
+
+      if (selectedNodeName === 'Pallets') {
+        this.getRoute()
+      } else {
+        this.getRoute3()
+      }
+    })
+  },
   mounted () {
-    // initialize the map on the 'map' div with a given center and zoom
-    // L.map('distributionMap', { center: [51.505, -0.09], zoom: 13 })
-    // var mymap = L.map('distributionMap').setView([51.505, -0.09], 10)
-
-    // L.tileLayer(`https://api.tiles.mapbox.com/v4/{id}/10/51.505/100.png?access_token=${this.accToken}`, {
-    //   attribution: 'Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors, <a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>, Imagery © <a href='https://www.mapbox.com/'>Mapbox</a>',
-    //   maxZoom: 18,
-    //   id: 'mapbox.streets',
-    //   accessToken: this.accToken
-    // }).addTo(mymap)
-
     mapboxgl.accessToken = this.accToken
-    const map = new mapboxgl.Map({
+    let map = new mapboxgl.Map({
       container: 'distributionMap',
       style: 'mapbox://styles/mapbox/streets-v9',
       center: [13.4805846, 55.6001911],
@@ -91,7 +168,8 @@ export default {
         }
       })
     })
-    console.log(map)
+
+    this.map = map
   }
 }
 </script>

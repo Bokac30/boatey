@@ -18,6 +18,8 @@
 </template>
 <script>
 import _ from 'lodash'
+import EventBus from '../../event-bus'
+
 export default {
   name: 'DashboardChart',
   data () {
@@ -28,6 +30,11 @@ export default {
     }
   },
   methods: {
+
+    nodeClick: (event, object) => {
+      console.log(object.part.data)
+      EventBus.$emit('NODE_SELECTED', object.part.data.name)
+    },
 
     changeAngle: () => {
       let angle = this.layoutAngle
@@ -66,7 +73,7 @@ export default {
     })
 
     // the template we defined earlier
-    myDiagram.nodeTemplate = $(go.Node, 'Vertical', { background: '#fff' },
+    myDiagram.nodeTemplate = $(go.Node, 'Vertical', { background: '#fff', click: this.nodeClick },
       $(go.Picture, { margin: 5, width: 50, height: 50, background: 'white' }, new go.Binding('source'))
       // $(go.TextBlock, 'foo', { margin: 10, stroke: 'black', font: 'bold 16px sans-serif' }, new go.Binding('text', 'name'))
     )

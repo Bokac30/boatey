@@ -33,7 +33,7 @@
 </template>
 <script>
 
-import DashboardTable from '@/components/RecallManagement/Table'
+import DashboardTable from '@/components/RecallManagement/Table1'
 import SideCharts from '@/components/RecallManagement/SideCharts'
 import WorldMap from '@/components/RecallManagement/WorldMap'
 import TopCards from '@/components/RecallManagement/Cards'

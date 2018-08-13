@@ -6,15 +6,13 @@
 
 <script>
 export default {
-  name: 'Chart1',
+  name: 'Chart2',
   data () {
     return { }
   },
   mounted () {
     var $ = go.GraphObject.make // for conciseness in defining templates
-    var myDiagram = $(go.Diagram, 'myDiagramDiv', {
-      layout: $(go.ParallelLayout, { layerSpacing: 20, nodeSpacing: 10 })
-    })
+    var myDiagram = $(go.Diagram, 'myDiagramDiv')
 
     // define the Node templates
     myDiagram.nodeTemplate =

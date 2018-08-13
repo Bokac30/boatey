@@ -20,7 +20,8 @@ const store = new Vuex.Store({
       { name: 'sam john', age: 24, status: 0, created_at: '2017-04-01' },
       { name: 'dia dia', age: 27, status: 1, created_at: '2017-05-08' }
     ],
-    sidebarToggled: false
+    sidebarToggled: false,
+    selectedNode: 0
   },
   actions: {
     ADD_USER: function ({ commit }, newUser) {
@@ -31,6 +32,9 @@ const store = new Vuex.Store({
     },
     TOGGLE_SIDEBAR: function ({ commit }, toggled) {
       commit('TOGGLE_SIDEBAR_MUTATION', toggled)
+    },
+    NODE_SELECTED: function ({ commit }, selectedNode) {
+      commit('NODE_SELECTED_MUTATION', selectedNode)
     }
   },
 
@@ -43,6 +47,9 @@ const store = new Vuex.Store({
     },
     TOGGLE_SIDEBAR_MUTATION: function (state, toggled) {
       state.sidebarToggled = toggled
+    },
+    NODE_SELECTED_MUTATION: function (state, selectedNode) {
+      state.selectedNode = selectedNode
     }
   },
 
@@ -52,6 +59,9 @@ const store = new Vuex.Store({
     },
     toggledFlag: state => {
       return state.sidebarToggled
+    },
+    selectedNode: state => {
+      return state.selectedNode
     }
   }
 })

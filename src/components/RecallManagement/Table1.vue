@@ -14,7 +14,7 @@
       <template slot="name" slot-scope="data">
         <b-row>
           <b-col md="2">
-            <img src="/static/images/avatar.png" width="50" height="50" />
+            <img :src="'/static/images/table/' + data.item.id + '.png'" width="25" height="40" />
           </b-col>
           <b-col md="10">
             <strong>{{data.value}}</strong>
@@ -74,7 +74,7 @@ let fieldsData = [
 ]
 
 export default {
-  name: 'Table',
+  name: 'Table1',
   data () {
     return {
       items: tableData,

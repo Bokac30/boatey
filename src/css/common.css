@@ -116,8 +116,7 @@ body {
 
 #page-content-wrapper {
   width: 100%;
-  position: absolute;
-  padding-left: 50px; }
+  position: absolute; }
 
 #wrapper.toggled #page-content-wrapper {
   position: absolute;
