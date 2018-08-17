@@ -1,7 +1,5 @@
 /* Sidebar Styles */
 .sidebar-nav {
-  position: absolute;
-  top: 0;
   width: 250px;
   margin: 0;
   padding: 0;
@@ -89,34 +87,33 @@ body {
 
 #wrapper {
   padding-left: 0;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease; }
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
+  display: flex; }
 
 #wrapper.toggled {
   padding-left: 250px; }
 
 #sidebar-wrapper {
   z-index: 1000;
-  position: fixed;
-  left: 250px;
   width: 0;
-  height: 100%;
-  margin-left: -250px;
   overflow-y: auto;
   background: #282d6f;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease; }
+  -webkit-transition: all 0.5s ease-out;
+  -moz-transition: all 0.5s ease-out;
+  -o-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out; }
 
 #wrapper.toggled #sidebar-wrapper {
-  width: 250px; }
+  width: 250px;
+  margin-left: -250px; }
 
 #page-content-wrapper {
   width: 100%;
-  position: absolute; }
+  position: absolute;
+  padding-left: 50px; }
 
 #wrapper.toggled #page-content-wrapper {
   position: absolute;
